@@ -8,12 +8,14 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 })
 
 module.exports = {
-  entry: path.join(__dirname, 'index.web.js'),
+  entry: './index.web.tsx',
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, '/build'),
   },
   resolve: {
+    modules: ['src', 'node_modules'],
+    extensions: ['.ts','.js'],
     alias: {
       'react-native$': 'react-native-web',
       '@storybook/react-native': '@storybook/react', //<-here
@@ -31,6 +33,7 @@ module.exports = {
           },
         },
       },
+      { test: /\.tsx?$/, loader: "ts-loader" },
     ],
   },
   plugins: [HTMLWebpackPluginConfig],

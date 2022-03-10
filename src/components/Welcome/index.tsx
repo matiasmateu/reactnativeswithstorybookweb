@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 
 export default class Welcome extends React.Component {
@@ -20,18 +19,9 @@ export default class Welcome extends React.Component {
     },
   };
 
-  showApp = (event) => {
-    const { showApp } = this.props;
-    event.preventDefault();
-
-    if (showApp) {
-      showApp();
-    }
-  };
-
   render() {
     return (
-      <View style={this.styles.wrapper}>
+      <View>
         <Text style={this.styles.header}>Welcome to React Native Storybook</Text>
         <Text style={this.styles.content}>
           This is a UI Component development environment for your React Native app. Here you can
@@ -47,11 +37,3 @@ export default class Welcome extends React.Component {
     );
   }
 }
-
-Welcome.defaultProps = {
-  showApp: null,
-};
-
-Welcome.propTypes = {
-  showApp: PropTypes.func,
-};
