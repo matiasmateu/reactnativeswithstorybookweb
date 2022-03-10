@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "storybookweb",
+    "slug": "storybookweb",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
